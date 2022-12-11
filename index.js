@@ -59,6 +59,12 @@ password.addEventListener('input', () => {
     }
 });
 
+password.addEventListener('change', () => {
+    const span = password.closest('.input-holder').querySelector('span');
+    span.textContent = '';
+    span.className = '';
+});
+
 function showPasswordError(span, password) {
     if (password.validity.valueMissing) {
         span.textContent = 'You need to enter password.';
@@ -90,3 +96,9 @@ function showPasswordCompatibility(span) {
         }
     }
 }
+
+repeatPassword.addEventListener('change', () => {
+    const span = password.closest('.input-holder').querySelector('span');
+    span.textContent = '';
+    span.className = '';
+});
